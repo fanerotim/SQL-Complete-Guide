@@ -1,1 +1,3 @@
-CREATE DATABASE talently1;
+--CREATE DATABASE talently;
+
+DROP DATABASE talently1;
