@@ -11,5 +11,13 @@
 -- ALTER COLUMN company_address SET DATA TYPE VARCHAR(300);
 
 -- Same example as the one above, but this works in MySQL
-ALTER TABLE employers
-MODIFY COLUMN company_address VARCHAR(300)
+-- ALTER TABLE employers
+-- MODIFY COLUMN company_address VARCHAR(300)
+
+-- Update users table in MySQL
+-- ALTER TABLE users
+-- MODIFY COLUMN full_name VARCHAR(300);
+
+-- Update users table in PostgreSQL
+ALTER TABLE users
+ALTER COLUMN full_name SET DATA TYPE VARCHAR(300)
