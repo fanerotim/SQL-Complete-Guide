@@ -1,3 +1,3 @@
---CREATE DATABASE talently;
+CREATE DATABASE talently;
 
-DROP DATABASE talently1;
+-- DROP DATABASE talently1; -- delete a database
