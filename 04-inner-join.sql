@@ -2,6 +2,8 @@
 -- FROM users AS usr
 -- INNER JOIN addresses AS addr ON usr.id = addr.city_id;
 
-SELECT addr.street, addr.house_number
-FROM addresses AS addr
-INNER JOIN cities AS c ON addr.city_id = c.id;
+-- Example with multiple INNER JOINs
+SELECT usr.first_name, usr.last_name, addr.street, addr.house_number, city.name AS city_name
+FROM users AS usr
+INNER JOIN addresses AS addr ON addr.id = usr.address_id
+INNER JOIN cities AS city ON city.id = addr.city_id
