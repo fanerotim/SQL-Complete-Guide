@@ -22,11 +22,20 @@
 --     ('boni.p@gmail.com', 'weakPass'),
 --     ('tosho_78@abv.bg', 'WhyAPass?');
 
-INSERT INTO projects (description)
+-- INSERT INTO projects (description)
+-- VALUES
+--     ('We are building a nice running app that helps users improve their running. We use ReactJS, ExpressJS and MySQL'),
+--     ('Our project is a blog for a small business. We use Angular for frontend and Firebase for its database.'),
+--     ('We are building a shop that will sell books. We are using Vanilla JS and MongoDB for its database. Backend is built with NodeJS / ExpressJS.');
+
+INSERT INTO employees_projects (employee_id, project_id)
 VALUES
-    ('We are building a nice running app that helps users improve their running. We use ReactJS, ExpressJS and MySQL'),
-    ('Our project is a blog for a small business. We use Angular for frontend and Firebase for its database.'),
-    ('We are building a shop that will sell books. We are using Vanilla JS and MongoDB for its database. Backend is built with NodeJS / ExpressJS.');
+    (1, 3),
+    (1, 2),
+    (2, 1),
+    (2, 2),
+    (3, 3),
+    (3, 2);
 
 
 

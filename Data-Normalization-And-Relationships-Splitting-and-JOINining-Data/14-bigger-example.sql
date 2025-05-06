@@ -36,6 +36,7 @@
 --     password VARCHAR(250) NOT NULL
 -- );
 
+-- Intermediate table => n:n
 CREATE TABLE employees_projects (
     id INT PRIMARY KEY AUTO_INCREMENT,
     employee_id INT NOT NULL,
