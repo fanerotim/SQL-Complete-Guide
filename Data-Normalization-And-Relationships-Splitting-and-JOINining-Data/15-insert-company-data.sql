@@ -49,8 +49,6 @@
 --     (3, 3),
 --     (3, 2);
 
-
-
 -- Test email constraint on intranet_accounts table - we should not be able to add an email if it already exists in the table
 -- INSERT INTO intranet_accounts(email, password)
 -- VALUES('nosuchemail-2@abv.bg', 'pass')
@@ -63,8 +61,34 @@
 -- INSERT INTO employees (first_name, last_name, email, team_id)
 -- VALUES ('Spiridon', 'Spiridonov', 'spiridon@abv.bg', 4);
 
--- Remove UNIQUE constraint from employees table's team_id column
+-- Get employee data in a certain team
+-- SELECT e.first_name, e.last_name, e.email, t.team_name
+-- FROM employees AS e
+-- INNER JOIN teams AS t ON e.team_id = t.id
+-- WHERE t.id = 3;
+
+-- Get employee data in a certain project
+-- SELECT e.first_name, e.last_name, p.description AS project_desc
+-- FROM employees_projects AS ep
+-- INNER JOIN projects AS p ON ep.project_id = p.id
+-- INNER JOIN employees AS e ON ep.employee_id = e.id
+-- WHERE p.id = 3;
+
+-- Add more employees to projects
+-- INSERT INTO employees_projects (employee_id, project_id)
+-- VALUES
+--     (82, 1),
+--     (83, 1),
+--     (84, 2),
+--     (85, 3);
+
+-- Get employee data in a certain project (again, for practice)
+SELECT ep.employee_id AS employee_id, e.email, p.description
+FROM employees_projects AS ep
+INNER JOIN projects AS p ON ep.project_id = p.id
+INNER JOIN employees AS e ON ep.employee_id = e.id
+WHERE p.id = 3;
 
 
--- SHOW INDEX
--- FROM employees;
+
+
