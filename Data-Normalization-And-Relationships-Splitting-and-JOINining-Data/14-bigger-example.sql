@@ -25,7 +25,7 @@
 --     first_name VARCHAR(250) NOT NULL, 
 --     last_name VARCHAR(250) NOT NULL,
 --     email VARCHAR(250) UNIQUE NOT NULL,
---     team_id INT UNIQUE,
+--     team_id INT,
 --     FOREIGN KEY (team_id) REFERENCES teams (id) ON DELETE SET NULL
 -- );
 

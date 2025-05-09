@@ -1,3 +1,8 @@
+-- Query that shows all constraint names in a table
+-- SELECT CONSTRAINT_NAME, CONSTRAINT_TYPE
+-- FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS
+-- WHERE TABLE_NAME='employees';
+
 -- INSERT INTO company_buildings (name)
 -- VALUES
 --     ('Conner`s way'),
@@ -12,9 +17,12 @@
 
 -- INSERT INTO employees (first_name, last_name, email, team_id)
 -- VALUES
---     ('Bistra', 'Chervenkova', 'bistra_89@abv.bg', 1),
---     ('Bonka', 'Petrova', 'boni.p@gmail.com', 2),
---     ('Todor', 'Gabrov', 'tosho_78@abv.bg', 3);
+--     ('Bongo', 'Jivkov', 'bongo_az@abv.bg', 1),
+--     ('Bianka', 'Paparizova', 'b.paparizova@gmail.com', 2),
+--     ('Benji', 'Paraskevov', 'benji@yahoo.com', 3),
+--     ('Jivka', 'Jivkova', 'jivka@abv.bg', 4),
+--     ('Karolina', 'Topurova', 'topurova@abv.bg', 5),
+--     ('Marcho', 'Todorov', 'marcho.t@abv.bg', 6);
 
 -- INSERT INTO intranet_accounts(email, password)
 -- VALUES
@@ -28,14 +36,14 @@
 --     ('Our project is a blog for a small business. We use Angular for frontend and Firebase for its database.'),
 --     ('We are building a shop that will sell books. We are using Vanilla JS and MongoDB for its database. Backend is built with NodeJS / ExpressJS.');
 
-INSERT INTO employees_projects (employee_id, project_id)
-VALUES
-    (1, 3),
-    (1, 2),
-    (2, 1),
-    (2, 2),
-    (3, 3),
-    (3, 2);
+-- INSERT INTO employees_projects (employee_id, project_id)
+-- VALUES
+--     (1, 3),
+--     (1, 2),
+--     (2, 1),
+--     (2, 2),
+--     (3, 3),
+--     (3, 2);
 
 
 
@@ -50,3 +58,9 @@ VALUES
 -- Also test FOREIGN KEY constraint on teams table - if a team does not exist, we should not be able to add employee
 -- INSERT INTO employees (first_name, last_name, email, team_id)
 -- VALUES ('Spiridon', 'Spiridonov', 'spiridon@abv.bg', 4);
+
+-- Remove UNIQUE constraint from employees table's team_id column
+
+
+-- SHOW INDEX
+-- FROM employees;
