@@ -1,7 +1,9 @@
+-- DROP TABLE employees_projects;
 -- DROP TABLE intranet_accounts;
 -- DROP TABLE employees;
 -- DROP TABLE teams;
 -- DROP TABLE company_buildings;
+-- DROP TABLE projects;
 
 -- CREATE TABLE projects (
 --     id INT PRIMARY KEY AUTO_INCREMENT,
