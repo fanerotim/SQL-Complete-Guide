@@ -3,6 +3,10 @@
 -- FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS
 -- WHERE TABLE_NAME='employees';
 
+-- Query that drops in this case UNIQUE constraint, but generally it can drop any constraint, we just need to know its name, which we can find by executing above query
+-- ALTER TABLE employees
+-- DROP CONSTRAINT team_id;
+
 -- INSERT INTO company_buildings (name)
 -- VALUES
 --     ('Conner`s way'),
@@ -20,9 +24,9 @@
 --     ('Bongo', 'Jivkov', 'bongo_az@abv.bg', 1),
 --     ('Bianka', 'Paparizova', 'b.paparizova@gmail.com', 2),
 --     ('Benji', 'Paraskevov', 'benji@yahoo.com', 3),
---     ('Jivka', 'Jivkova', 'jivka@abv.bg', 4),
---     ('Karolina', 'Topurova', 'topurova@abv.bg', 5),
---     ('Marcho', 'Todorov', 'marcho.t@abv.bg', 6);
+--     ('Jivka', 'Jivkova', 'jivka@abv.bg', 2),
+--     ('Karolina', 'Topurova', 'topurova@abv.bg', 2),
+--     ('Marcho', 'Todorov', 'marcho.t@abv.bg', 2);
 
 -- INSERT INTO intranet_accounts(email, password)
 -- VALUES
