@@ -2,6 +2,8 @@
 -- DROP TABLES payment_methods;
 -- DROP TABLES bookings;
 
+-- CREATE DATABASE restaurants;
+
 CREATE TABLE tables(
     id INT PRIMARY KEY AUTO_INCREMENT,
     seats INT NOT NULL,
