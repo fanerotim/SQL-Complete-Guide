@@ -20,7 +20,7 @@
             "port": 3306,
             "driver": "MySQL",
             "name": "mysql2",
-            "database": "restaurants",
+            "database": "gym",
             "username": "root",
             "askForPassword": true
         }
