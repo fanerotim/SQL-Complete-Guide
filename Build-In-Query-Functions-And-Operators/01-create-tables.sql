@@ -33,7 +33,7 @@
 CREATE TABLE memberships(
     id INT PRIMARY KEY AUTO_INCREMENT,
     membership_start DATE NOT NULL,
-    membership_end DATE NOT NULL,
+    membership_end DATE,
     last_checkin TIMESTAMP,
     last_checkout TIMESTAMP,
     consumption NUMERIC(5, 2),
