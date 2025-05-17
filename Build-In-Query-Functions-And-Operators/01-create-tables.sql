@@ -31,7 +31,8 @@
 -- );
 
 CREATE TABLE memberships(
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    -- id INT PRIMARY KEY AUTO_INCREMENT, MySQL
+    id SERIAL PRIMARY KEY,
     membership_start DATE NOT NULL,
     membership_end DATE,
     last_checkin TIMESTAMP,
