@@ -21,3 +21,11 @@
 --     FROM orders AS o
 --     WHERE o.customer_id = c.id
 -- );
+
+-- This query does the same as the above one, but it's shorter, clearer and probably better
+SELECT c.email
+FROM customers AS c
+WHERE c.id IN(
+    SELECT o.customer_id
+    FROM orders AS o
+);
