@@ -12,5 +12,10 @@
 -- FROM memberships;
 
 -- THIS QUERY ALSO WORKS IN MYSQL, BUT NOT IN POSTGRESQL
-SELECT first_name LIKE 'b%', first_name
-FROM memberships;
+-- SELECT first_name LIKE 'b%', first_name
+-- FROM memberships;
+
+-- With this query we do not know what letter/ characters are before or after the 'i'
+SELECT last_name
+FROM memberships
+WHERE last_name LIKE '%i%'
