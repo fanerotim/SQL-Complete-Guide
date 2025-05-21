@@ -13,20 +13,21 @@
 --     END AS cur_day
 -- FROM memberships;
 
-
--- SELECT cur_day, last_checkin,
---     CASE 
---         WHEN cur_day = 1 THEN 'Monday'
---         WHEN cur_day = 2 THEN 'Tuesday'
---         WHEN cur_day = 3 THEN 'Wednesday'
---         WHEN cur_day = 4 THEN 'Thursday'
---         WHEN cur_day = 5 THEN 'Friday'
---         WHEN cur_day = 6 THEN 'Saturday'
---         WHEN cur_day = 7 THEN 'Sunday'
---     END AS day_of_week
--- FROM (
---     SELECT WEEKDAY(last_checkin) + 1 AS cur_day, last_checkin
---     FROM memberships
--- ) AS cur_dates_table;
+-- BETTER SOLUTION
+SELECT cur_day, last_checkin,
+    CASE 
+        WHEN cur_day = 1 THEN 'Monday'
+        WHEN cur_day = 2 THEN 'Tuesday'
+        WHEN cur_day = 3 THEN 'Wednesday'
+        WHEN cur_day = 4 THEN 'Thursday'
+        WHEN cur_day = 5 THEN 'Friday'
+        WHEN cur_day = 6 THEN 'Saturday'
+        WHEN cur_day = 7 THEN 'Sunday'
+        -- ELSE 'Sunday' -- Alternative to the above 
+    END AS day_of_week
+FROM (
+    SELECT WEEKDAY(last_checkin) + 1 AS cur_day, last_checkin
+    FROM memberships
+) AS cur_dates_table;
 
 
