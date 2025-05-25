@@ -4,9 +4,9 @@ INSERT INTO customers (
     email
 )
 VALUES(
-    'Genoveva',
-    'Petkova',
-    'genoveva@gmail.com'
+    'Dragomir',
+    'Stoimenov',
+    'drago_chaia@gmail.com'
 );
 
 INSERT INTO orders(
@@ -14,7 +14,7 @@ INSERT INTO orders(
     customer_id
 )
 VALUES(
-    52.2,
-    12
+    732.2,
+    3
 );
 
