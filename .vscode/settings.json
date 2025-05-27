@@ -10,7 +10,7 @@
             "port": 3306,
             "driver": "MySQL",
             "name": "mysql2",
-            "database": "indexes",
+            "database": "events",
             "username": "root",
             "askForPassword": true
         },
@@ -21,7 +21,7 @@
             "askForPassword": true,
             "driver": "PostgreSQL",
             "name": "postgre1",
-            "database": "indexes",
+            "database": "events",
             "username": "postgres"
         }
     ]
