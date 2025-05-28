@@ -7,31 +7,16 @@ CREATE TABLE users(
     email VARCHAR(250) UNIQUE NOT NULL
 );
 
-CREATE TABLE organizers(
-    id INT PRIMARY KEY AUTO_INCREMENT, 
-    -- id SERIAL PRIMARY KEY, -- PostgreSQL,
-    password VARCHAR(250) NOT NULL,
-    user_id INT NOT NULL,
-    event_id INT NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE,
-    FOREIGN KEY (event_id) REFERENCES events (id)
-);
-
-CREATE TABLE events(
+CREATE TABLE cities(
     id INT PRIMARY KEY AUTO_INCREMENT,
     -- id SERIAL PRIMARY KEY, -- PostgreSQL
-    name VARCHAR(250) UNIQUE NOT NULL CHECK(LENGTH(name) > 5),
-    image VARCHAR(250) NOT NULL,
-    date_time TIMESTAMP NOT NULL,
-    description TEXT NOT NULL,
-    max_participants INT CHECK (max_participants > 0),
-    min_age INT CHECK (min_age > 0)
-    organizer_id INT NOT NULL,
-    tag_id INT NOT NULL,
-    location_id INT NOT NULL,
-    FOREIGN KEY (organizer_id) REFERENCES organizers (id) ON DELETE CASCADE,
-    FOREIGN KEY (tag_id) REFERENCES tags (id),
-    FOREIGN KEY (location_id) REFERENCES locations (id) ON DELETE CASCADE
+    name VARCHAR(250) NOT NULL
+);
+
+CREATE TABLE tags(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    -- id SERIAL PRIMARY KEY,  -- PostgreSQL
+    name VARCHAR(250) UNIQUE NOT NULL
 );
 
 CREATE TABLE locations(
@@ -44,16 +29,29 @@ CREATE TABLE locations(
     FOREIGN KEY (city_id) REFERENCES cities (id) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
-CREATE TABLE cities(
+CREATE TABLE events(
     id INT PRIMARY KEY AUTO_INCREMENT,
     -- id SERIAL PRIMARY KEY, -- PostgreSQL
-    name VARCHAR(250) NOT NULL
+    name VARCHAR(250) UNIQUE NOT NULL CHECK(LENGTH(name) > 5),
+    image VARCHAR(250) NOT NULL,
+    date_time TIMESTAMP NOT NULL,
+    description TEXT NOT NULL,
+    max_participants INT CHECK (max_participants > 0),
+    min_age INT CHECK (min_age > 0),
+    tag_id INT NOT NULL,
+    location_id INT NOT NULL,
+    FOREIGN KEY (tag_id) REFERENCES tags (id),
+    FOREIGN KEY (location_id) REFERENCES locations (id) ON DELETE CASCADE
 );
 
-CREATE TABLE tags(
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    -- id SERIAL PRIMARY KEY,  -- PostgreSQL
-    name VARCHAR(250) UNIQUE NOT NULL
+CREATE TABLE organizers(
+    id INT PRIMARY KEY AUTO_INCREMENT, 
+    -- id SERIAL PRIMARY KEY, -- PostgreSQL,
+    password VARCHAR(250) NOT NULL,
+    user_id INT NOT NULL,
+    event_id INT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE,
+    FOREIGN KEY (event_id) REFERENCES events (id)
 );
 
 CREATE TABLE tags_events(
