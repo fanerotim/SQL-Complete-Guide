@@ -6,8 +6,14 @@
 -- WHERE c.name = 'Plovdiv';
 
 -- Example of a query that uses retrieves data from intermediate table to then JOIN data from multiple tables
-SELECT e.name, e.location_id, t.name
-FROM events AS e
-INNER JOIN tags_events AS te ON te.event_id = e.id
-INNER JOIN tags AS t ON t.id = te.tag_id
-WHERE e.name = 'Event 4';
+-- SELECT e.name, e.location_id, t.name
+-- FROM events AS e
+-- INNER JOIN tags_events AS te ON te.event_id = e.id
+-- INNER JOIN tags AS t ON t.id = te.tag_id
+-- WHERE e.name = 'Event 4';
+
+SELECT u.first_name, u.last_name, e.name
+FROM users AS u
+LEFT JOIN organizers AS o ON o.user_id = u.id
+LEFT JOIN events AS e ON e.id = o.event_id; 
+
