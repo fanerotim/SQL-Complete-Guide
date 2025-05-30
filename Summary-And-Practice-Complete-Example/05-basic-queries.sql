@@ -12,8 +12,13 @@
 -- INNER JOIN tags AS t ON t.id = te.tag_id
 -- WHERE e.name = 'Event 4';
 
-SELECT u.first_name, u.last_name, e.name
-FROM users AS u
-LEFT JOIN organizers AS o ON o.user_id = u.id
-LEFT JOIN events AS e ON e.id = o.event_id; 
+-- SELECT u.first_name, u.last_name, e.name
+-- FROM users AS u
+-- LEFT JOIN organizers AS o ON o.user_id = u.id
+-- LEFT JOIN events AS e ON e.id = o.event_id; 
+
+SELECT e.name, u.email
+FROM events AS e
+LEFT JOIN users_events AS ue ON ue.event_id = e.id
+LEFT JOIN users AS u ON u.id = ue.user_id;
 
